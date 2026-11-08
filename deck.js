@@ -232,9 +232,23 @@
   }));
 
   /* ---------- 頁內互動元件（點選揭曉；自動播放時依 data-reveal 步數自動揭曉） ---------- */
-  document.querySelectorAll('.k-opt, .k-flip').forEach(o => {
+  document.querySelectorAll('.k-opt, .k-flip, .k-qcard').forEach(o => {
     o.addEventListener('click', () => o.classList.toggle('shown'));
     if (showAll) o.classList.add('shown');
+  });
+
+  /* ---------- ARIA 決策矩陣 (table.k-mx) 點選互動 ---------- */
+  document.querySelectorAll('table.k-mx td.cell').forEach(cell => {
+    cell.addEventListener('click', e => {
+      const parentSlide = cell.closest('.k-slide');
+      if (!parentSlide) return;
+      parentSlide.querySelectorAll('table.k-mx td.cell').forEach(c => c.classList.remove('sel'));
+      cell.classList.add('sel');
+      const det = parentSlide.querySelector('.k-det');
+      if (det && cell.dataset.d) {
+        det.textContent = cell.dataset.d;
+      }
+    });
   });
 
   /* ---------- 原文圖點選放大（img.zoom；點任一處關閉） ---------- */

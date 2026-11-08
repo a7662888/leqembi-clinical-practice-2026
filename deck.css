@@ -787,3 +787,897 @@ body.k-reflow .k-lang-toggle {
 body.k-reflow .k-stat-val {
   font-size: 38px;
 }
+
+/* ==========================================================================
+   Dynamic Infographic & Chart Component Styles (Tailored for LEQEMBI Deck)
+   ========================================================================== */
+
+/* Slide Header & Subtitle large fonts */
+.k-slide h2 { font-size: 52px; font-weight: 900; line-height: 1.2; margin: 0; }
+.k-sub { font-size: 26px; line-height: 1.4; color: var(--ink-2); margin-top: 6px; }
+.k-cite { font-size: 18px; color: var(--muted); margin-top: auto; }
+
+/* Takeaway Banner */
+.k-take {
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding: 14px 26px;
+  border-radius: 14px;
+  background: var(--navy-wash);
+  border-left: 12px solid var(--navy);
+  font-size: 30px;
+  font-weight: 900;
+  line-height: 1.4;
+  color: var(--navy);
+}
+.k-take.warn {
+  background: var(--terra-wash);
+  border-left-color: var(--terra);
+  color: var(--terra);
+}
+.k-take.safe {
+  background: var(--sage-wash);
+  border-left-color: var(--sage);
+  color: var(--sage);
+}
+
+/* Legend */
+.k-legend2 {
+  display: flex;
+  gap: 28px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink-2);
+  margin: 0 0 14px;
+  align-items: center;
+}
+.k-legend2 i {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  vertical-align: -3px;
+  margin-right: 8px;
+}
+
+/* Vertical Grouped Bar Chart */
+.k-vb {
+  display: flex;
+  align-items: flex-end;
+  gap: 50px;
+  height: 380px;
+  padding: 0 16px;
+  border-bottom: 3px solid var(--ink);
+}
+.k-vg {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  height: 100%;
+}
+.k-vc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  width: 96px;
+}
+.k-vc b {
+  font-family: "Noto Serif TC", serif;
+  font-size: 32px;
+  font-weight: 900;
+  margin-bottom: 8px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+.k-vc i {
+  display: block;
+  width: 96px;
+  border-radius: 8px 8px 0 0;
+  transform-origin: bottom;
+  transition: transform .7s ease;
+}
+.k-vlabs {
+  display: flex;
+  gap: 50px;
+  padding: 0 16px;
+}
+.k-vlabs span {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 900;
+  color: var(--navy);
+  padding-top: 10px;
+}
+.k-vb[data-s]:not(.on) .k-vc i {
+  transform: scaleY(0);
+}
+
+/* Question / Flip Cards */
+.k-qcard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px 32px;
+  border-radius: 20px;
+  border: 3px solid var(--line);
+  border-top: 12px solid var(--navy);
+  background: var(--line-2);
+  box-shadow: 0 6px 0 var(--line);
+  text-align: left;
+  cursor: pointer;
+  transition: transform .2s, box-shadow .2s;
+}
+.k-qcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 0 var(--line);
+}
+.k-qcard .k-no {
+  font-family: "Noto Serif TC", serif;
+  font-size: 72px;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1;
+  margin: 0;
+}
+.k-qcard .k-q {
+  font-size: 36px !important;
+  font-weight: 900;
+  color: var(--navy);
+  margin-top: 18px;
+  line-height: 1.3;
+}
+.k-qcard .k-a {
+  font-size: 25px !important;
+  line-height: 1.5;
+  margin-top: 16px;
+  color: var(--ink);
+}
+.k-qcard .k-tap {
+  margin-top: auto;
+  font-size: 20px;
+  font-weight: 900;
+  color: #FFFFFF;
+  background: var(--navy);
+  border-radius: 999px;
+  padding: 4px 16px;
+}
+.k-qcard.shown {
+  background: var(--navy-wash);
+  border-color: var(--navy);
+}
+.k-qcard.shown .k-tap {
+  display: none;
+}
+
+/* Timeline (10 milestones staggered) */
+.k-tl {
+  position: relative;
+  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: 1fr 1fr;
+  margin: 20px 0;
+}
+.k-tl:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 8px;
+  margin-top: -4px;
+  background: var(--line);
+  border-radius: 4px;
+}
+.k-tev {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 4px;
+}
+.k-tev.up {
+  grid-row: 1;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+}
+.k-tev.dn {
+  grid-row: 2;
+  justify-content: flex-start;
+  padding-top: 40px;
+}
+.k-tev:nth-child(1){grid-column:1}.k-tev:nth-child(2){grid-column:2}.k-tev:nth-child(3){grid-column:3}.k-tev:nth-child(4){grid-column:4}.k-tev:nth-child(5){grid-column:5}
+.k-tev:nth-child(6){grid-column:6}.k-tev:nth-child(7){grid-column:7}.k-tev:nth-child(8){grid-column:8}.k-tev:nth-child(9){grid-column:9}.k-tev:nth-child(10){grid-column:10}
+.k-tev i {
+  position: absolute;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  margin-left: -14px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.k-tev.up i { bottom: -14px; }
+.k-tev.dn i { top: -14px; }
+.k-tev b {
+  font-size: 26px;
+  font-weight: 900;
+}
+.k-tev span {
+  font-size: 22px;
+  line-height: 1.35;
+  margin-top: 6px;
+}
+
+/* Step Flow with Big Number Badges */
+.k-step5 {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 18px 22px;
+  border-radius: 16px;
+  background: var(--line-2);
+  margin-bottom: 14px;
+}
+.k-step5 .n {
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-family: "Noto Serif TC", serif;
+  font-size: 32px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.k-step5 h3 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--navy);
+}
+.k-step5 p {
+  margin: 6px 0 0;
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+/* Pivotal Trial Hero Stats Card */
+.k-trial {
+  border-radius: 20px;
+  background: var(--line-2);
+  padding: 28px 32px;
+}
+.k-trial h3 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 900;
+  color: var(--navy);
+  border-left: 12px solid var(--navy);
+  padding-left: 16px;
+  line-height: 1.25;
+}
+.k-trial h3 small {
+  display: block;
+  font-size: 22px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 4px;
+}
+.k-trial .k-lab {
+  margin: 18px 0 0;
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--muted);
+}
+.k-trial .k-num1 {
+  margin: 0;
+  font-family: "Noto Serif TC", serif;
+  font-size: 88px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+.k-trial .k-ci {
+  margin: 4px 0 0;
+  font-size: 22px;
+  color: var(--ink-2);
+  line-height: 1.4;
+}
+.k-trial .k-row3 {
+  border-top: 2px solid var(--line);
+  margin-top: 18px;
+  padding-top: 14px;
+}
+.k-trial .k-v2 {
+  margin: 2px 0 0;
+  font-family: "Noto Serif TC", serif;
+  font-size: 46px;
+  font-weight: 900;
+}
+
+/* Cards with Colored Top Border */
+.k-bcard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 18px;
+  background: var(--line-2);
+  border-top: 12px solid var(--navy);
+  padding: 24px 26px;
+}
+.k-bcard h3 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--navy);
+  line-height: 1.3;
+}
+.k-bcard .k-bv {
+  margin: 14px 0 8px;
+  font-family: "Noto Serif TC", serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.15;
+}
+.k-bcard p {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.45;
+  color: var(--ink-2);
+}
+
+/* Cohort & Registry Table */
+table.k-coh {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  font-size: 24px;
+}
+table.k-coh th {
+  background: var(--navy);
+  color: #FFFFFF;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 12px 16px;
+  text-align: left;
+}
+table.k-coh td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  font-size: 24px;
+  line-height: 1.4;
+}
+table.k-coh tr:last-child td {
+  border-bottom: 0;
+}
+table.k-coh tr:nth-child(even) td {
+  background: var(--line-2);
+}
+
+/* MRI Monitoring Schedule Timeline */
+.k-mri {
+  position: relative;
+  margin: 10px 0;
+}
+.k-mri .tr {
+  position: relative;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: center;
+  height: 140px;
+}
+.k-mri .tl {
+  font-size: 30px;
+  font-weight: 900;
+  text-align: right;
+  padding-right: 36px;
+  line-height: 1.3;
+}
+.k-mri .tl span {
+  display: block;
+  font-size: 22px;
+  color: var(--muted);
+  font-weight: 500;
+}
+.k-mri .ax {
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line);
+}
+.k-mri .mk {
+  position: absolute;
+  top: -24px;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 180px;
+}
+.k-mri .dt {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: var(--navy);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 900;
+}
+.k-mri .dt.hollow {
+  background: #FFFFFF;
+  border: 6px solid var(--terra);
+}
+.k-mri .mt {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 8px;
+  color: var(--navy);
+}
+
+/* ARIA Clinical Action Matrix */
+table.k-mx {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
+  font-size: 24px;
+  margin: -8px;
+  table-layout: fixed;
+}
+table.k-mx th {
+  font-size: 23px;
+  font-weight: 900;
+  color: #FFFFFF;
+  background: var(--navy);
+  padding: 12px 14px;
+  text-align: center;
+  border-radius: 10px;
+}
+table.k-mx th:first-child {
+  text-align: left;
+  width: 32%;
+}
+table.k-mx td {
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: var(--line-2);
+  font-weight: 700;
+  font-size: 23px;
+}
+table.k-mx td.cell {
+  text-align: center;
+  cursor: pointer;
+  box-shadow: inset 0 -4px 0 rgba(0,0,0,.15);
+}
+table.k-mx td.go {
+  background: var(--sage-wash);
+  color: var(--sage);
+}
+table.k-mx td.stop {
+  background: var(--terra-wash);
+  color: var(--terra);
+}
+table.k-mx td.hold {
+  background: var(--butter-wash);
+  color: var(--navy);
+}
+
+/* IV to SC Transition Flow */
+.k-rg {
+  display: grid;
+  grid-template-columns: 500px 70px 300px 70px 1fr;
+  align-items: center;
+  gap: 0;
+}
+.k-rgb {
+  border-radius: 16px;
+  padding: 20px 24px;
+  text-align: center;
+}
+.k-rgb h3 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+}
+.k-rgb p {
+  margin: 6px 0 0;
+  font-size: 24px;
+}
+.k-rgb.iv {
+  background: var(--navy-wash);
+  color: var(--navy);
+}
+.k-rgb.sc {
+  background: var(--sage-wash);
+  color: var(--sage);
+}
+.k-rgm {
+  height: 200px;
+  border-radius: 20px;
+  background: var(--navy);
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.k-rgm b {
+  font-family: "Noto Serif TC", serif;
+  font-size: 50px;
+  font-weight: 900;
+}
+.k-rgm span {
+  font-size: 24px;
+}
+.k-arr {
+  text-align: center;
+  font-size: 48px;
+  color: var(--muted);
+}
+
+/* Emergency Stroke Protocol */
+.k-er {
+  display: grid;
+  grid-template-columns: 560px 1fr 1fr;
+  gap: 16px 20px;
+}
+.k-er .b {
+  border-radius: 16px;
+  padding: 18px 24px;
+  font-size: 26px;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.k-er .navy {
+  background: var(--navy);
+  color: #FFFFFF;
+  font-weight: 900;
+  grid-column: 1 / span 3;
+}
+.k-er .lt {
+  background: var(--line-2);
+}
+.k-er .tr {
+  background: var(--terra-wash);
+  color: var(--terra);
+  font-weight: 900;
+}
+.k-er .sg {
+  background: var(--sage-wash);
+  color: var(--sage);
+  font-weight: 900;
+}
+.k-er .full {
+  grid-column: 1 / span 3;
+}
+
+/* Conclusion Grid with QR Code */
+.k-endgrid {
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 40px;
+  align-items: start;
+}
+
+.k-qr {
+  text-align: center;
+  border-radius: 20px;
+  background: var(--line-2);
+  padding: 24px;
+  border: 2px solid var(--line);
+}
+.k-qr img {
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #FFFFFF;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+.k-qrt {
+  margin: 12px 0 0;
+  font-size: 22px;
+  color: var(--muted);
+}
+.k-qrn {
+  margin: 8px 0 0;
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--navy);
+}
+.k-qrm {
+  margin: 6px 0 0;
+  font-size: 22px;
+  color: var(--ink-2);
+}
+
+/* ==========================================================================
+   Comprehensive Mobile Reflow Overrides (390x844 & 844x390)
+   ========================================================================== */
+body.k-reflow.k-port .k-tl {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 14px !important;
+  margin: 10px 0 !important;
+}
+body.k-reflow.k-port .k-tl:before {
+  left: 14px !important;
+  right: auto !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 6px !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+body.k-reflow.k-port .k-tev,
+body.k-reflow.k-port .k-tev.up,
+body.k-reflow.k-port .k-tev.dn {
+  grid-column: auto !important;
+  grid-row: auto !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+  padding: 0 0 0 52px !important;
+  justify-content: flex-start !important;
+}
+body.k-reflow.k-port .k-tev i,
+body.k-reflow.k-port .k-tev.up i,
+body.k-reflow.k-port .k-tev.dn i {
+  left: 2px !important;
+  margin-left: 0 !important;
+  top: 4px !important;
+  bottom: auto !important;
+}
+
+body.k-reflow.k-port .k-vb {
+  gap: 12px !important;
+  padding: 0 !important;
+  justify-content: space-between !important;
+  height: 280px !important;
+}
+body.k-reflow.k-port .k-vg {
+  gap: 4px !important;
+}
+body.k-reflow.k-port .k-vc,
+body.k-reflow.k-port .k-vc i {
+  width: auto !important;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+}
+body.k-reflow.k-port .k-vc i {
+  width: 100% !important;
+}
+body.k-reflow.k-port .k-vc b {
+  font-size: 20px !important;
+}
+body.k-reflow.k-port .k-vlabs {
+  gap: 12px !important;
+  padding: 0 !important;
+}
+body.k-reflow.k-port .k-vlabs span {
+  font-size: 18px !important;
+  width: auto !important;
+  flex: 1 1 0 !important;
+}
+
+body.k-reflow.k-port .k-mri {
+  overflow-x: auto !important;
+  max-width: 100% !important;
+}
+body.k-reflow.k-port .k-mri .tr {
+  grid-template-columns: 140px 1fr !important;
+}
+body.k-reflow.k-port .k-mri .tl {
+  font-size: 20px !important;
+  padding-right: 14px !important;
+}
+body.k-reflow.k-port .k-mri .mt {
+  font-size: 16px !important;
+}
+
+body.k-reflow.k-port .k-er {
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+}
+body.k-reflow.k-port .k-er .b {
+  grid-column: 1 !important;
+  font-size: 20px !important;
+  padding: 12px 14px !important;
+}
+
+body.k-reflow.k-port .k-rg {
+  grid-template-columns: 1fr !important;
+  gap: 10px !important;
+}
+body.k-reflow.k-port .k-rg .k-arr {
+  transform: rotate(90deg) !important;
+  font-size: 28px !important;
+  margin: -4px 0 !important;
+}
+body.k-reflow.k-port .k-rgm {
+  height: auto !important;
+  padding: 14px 18px !important;
+}
+
+body.k-reflow.k-port .k-endgrid {
+  grid-template-columns: 1fr !important;
+  gap: 20px !important;
+}
+body.k-reflow.k-port .k-qr img {
+  width: 100% !important;
+  max-width: 280px !important;
+  height: auto !important;
+}
+body.k-reflow.k-port .k-tk {
+  gap: 14px !important;
+  padding: 8px 0 !important;
+}
+body.k-reflow.k-port .k-tk > .n {
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 24px !important;
+}
+body.k-reflow.k-port .k-tk span {
+  font-size: 20px !important;
+}
+
+/* Conclusion Takeaway Items */
+.k-tk {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--line);
+}
+.k-tk > .n {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--navy);
+  color: #FFFFFF;
+  font-family: "Noto Serif TC", serif;
+  font-size: 28px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.k-tk > span {
+  font-size: 23px;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.k-tk strong {
+  font-size: 24px;
+  color: var(--navy);
+  font-weight: 900;
+}
+
+/* Re-drawn Forest Plot */
+.k-forest {
+  font-size: 22px;
+  line-height: 1.35;
+  width: 100%;
+}
+.k-forest .fr {
+  display: grid;
+  grid-template-columns: 380px 90px 1fr 100px;
+  align-items: center;
+  gap: 16px;
+  height: 38px;
+}
+.k-forest .fr span:first-child {
+  white-space: nowrap;
+  font-weight: 700;
+}
+.k-forest .nn, .k-forest .vv {
+  text-align: right;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.k-forest .plot {
+  position: relative;
+  height: 100%;
+  border-left: 2px solid var(--line);
+  border-right: 2px solid var(--line);
+}
+.k-forest .ci {
+  position: absolute;
+  top: 18px;
+  height: 3px;
+  background: var(--ink-2);
+}
+.k-forest .pt {
+  position: absolute;
+  top: 11px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+.k-forest .dia {
+  position: absolute;
+  top: 10px;
+  height: 18px;
+  border-radius: 9px;
+}
+.k-forest .sum {
+  background: var(--navy-wash);
+  border-radius: 8px;
+  padding: 0 8px;
+}
+.k-forest .th {
+  font-weight: 900;
+  color: var(--muted);
+  border-bottom: 2px solid var(--line);
+  height: 36px;
+}
+.k-forest .ax {
+  height: 30px;
+  margin-top: 10px;
+}
+.k-forest .ax .plot {
+  border: 0;
+  border-top: 2px solid var(--ink);
+}
+.k-forest .ax b {
+  position: absolute;
+  top: 6px;
+  transform: translateX(-50%);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+/* Forest plot mobile reflow */
+body.k-reflow.k-port .k-forest {
+  font-size: 13px !important;
+  max-width: 100% !important;
+}
+body.k-reflow.k-port .k-forest .fr {
+  grid-template-columns: 135px 38px 105px 48px !important;
+  gap: 4px !important;
+  height: 28px !important;
+}
+body.k-reflow.k-port .k-forest .fr span:first-child {
+  font-size: 12px !important;
+}
+body.k-reflow.k-port .k-forest .nn,
+body.k-reflow.k-port .k-forest .vv {
+  font-size: 12px !important;
+}
+body.k-reflow.k-port .k-forest .ci {
+  top: 13px !important;
+  height: 2px !important;
+}
+body.k-reflow.k-port .k-forest .pt {
+  top: 8px !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+body.k-reflow.k-port .k-forest .dia {
+  top: 7px !important;
+  height: 12px !important;
+}
+body.k-reflow.k-port .k-forest .ax {
+  height: 24px !important;
+}
+body.k-reflow.k-port .k-forest .ax b {
+  font-size: 11px !important;
+  top: 4px !important;
+}
