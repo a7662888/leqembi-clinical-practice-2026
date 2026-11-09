@@ -1,0 +1,125 @@
+/* v2.css — Claude 重建版元件（2026-11-09）。只用 hex 色；全部 k-v 前綴；載入順序在 deck.css 之後 */
+.k-slide .k-head h2{font-size:52px;line-height:1.22;margin:0;font-weight:900;color:#1E2833}
+.k-slide .k-head .k-sub{font-size:29px;line-height:1.4;margin:10px 0 0;color:#3B4754;font-weight:600}
+.k-slide .k-body{gap:20px}
+.k-vgrid{display:grid;gap:22px;align-items:stretch}
+.k-vgrid.c2{grid-template-columns:1fr 1fr}
+.k-vgrid.c3{grid-template-columns:repeat(3,1fr)}
+.k-vgrid.c4{grid-template-columns:repeat(4,1fr)}
+.k-vgrid.c64{grid-template-columns:1.5fr 1fr}
+.k-vgrid.c46{grid-template-columns:1fr 1.5fr}
+.k-vgrid.fill{flex:1 1 auto;min-height:0}
+.k-vcard{background:#FFFFFF;border:2px solid #E3E6E9;border-left:10px solid #24476E;border-radius:14px;padding:20px 24px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.k-vcard.nv{border-left-color:#24476E;background:#F6F9FC}
+.k-vcard.sg{border-left-color:#3F7A55;background:#F5FAF6}
+.k-vcard.tr{border-left-color:#B5482F;background:#FDF6F3}
+.k-vcard.bt{border-left-color:#C99A1E;background:#FEFAEC}
+.k-vcard.gy{border-left-color:#5F6B77;background:#F7F8F9}
+.k-vcard h3{margin:0;font-size:35px;line-height:1.3;font-weight:900;color:#1E2833}
+.k-vcard p{margin:0;font-size:29px;line-height:1.48;color:#1E2833}
+.k-vcard ul{margin:0;padding-left:1.1em}
+.k-vcard li{font-size:29px;line-height:1.45;margin:2px 0;color:#1E2833}
+.k-vcard .k-vsmall{font-size:24px;color:#3B4754}
+.k-vstat{font-family:"Noto Serif TC",serif;font-size:80px;font-weight:900;line-height:1.05;color:#24476E;letter-spacing:-0.01em}
+.k-vstat.tr{color:#B5482F}.k-vstat.sg{color:#3F7A55}.k-vstat.bt{color:#9A6F00}
+.k-vstat small{font-size:28px;font-weight:800;margin-left:4px}
+.k-vlab{font-size:26px;line-height:1.4;color:#3B4754;font-weight:700}
+.k-vtag{display:inline-block;font-size:21px;font-weight:800;padding:3px 12px;border-radius:999px;background:#E8EFF7;color:#24476E;width:fit-content}
+.k-vtag.tr{background:#FBEDE8;color:#B5482F}.k-vtag.sg{background:#E9F3EC;color:#3F7A55}.k-vtag.bt{background:#FDF6DD;color:#7A5A00}.k-vtag.gy{background:#F0F2F4;color:#3B4754}
+.k-vtable{width:100%;border-collapse:collapse;font-size:28px;line-height:1.35}
+.k-vtable th{background:#24476E;color:#FFFFFF;font-weight:800;text-align:left;padding:12px 14px;font-size:26px}
+.k-vtable td{padding:13px 14px;border-bottom:2px solid #E3E6E9;vertical-align:top;color:#1E2833}
+.k-vtable tr:nth-child(even) td{background:#F7F9FB}
+.k-vtable td.num{font-variant-numeric:tabular-nums;font-weight:800;white-space:nowrap}
+.k-vtable td.hl{color:#B5482F;font-weight:900}
+.k-vtable td.ok{color:#3F7A55;font-weight:900}
+.k-vtake{margin-top:auto;background:#E8EFF7;border-left:10px solid #24476E;border-radius:12px;padding:16px 24px;font-size:30px;line-height:1.42;font-weight:700;color:#1E2833}
+.k-vtake.tr{background:#FBEDE8;border-left-color:#B5482F}
+.k-vtake.sg{background:#E9F3EC;border-left-color:#3F7A55}
+.k-vbars{display:flex;flex-direction:column;gap:18px}
+.k-vbar{display:grid;grid-template-columns:360px 1fr 130px;align-items:center;gap:14px}
+.k-vbar .l{font-size:27px;font-weight:700;color:#1E2833;line-height:1.3}
+.k-vbar .t{display:block;height:46px;background:#F0F2F4;border-radius:8px;overflow:hidden}
+.k-vbar .f{display:block;height:100%;background:#24476E;border-radius:8px}
+.k-vbar .f.tr{background:#B5482F}.k-vbar .f.sg{background:#3F7A55}.k-vbar .f.bt{background:#C99A1E}.k-vbar .f.gy{background:#8A949E}
+.k-vbar .v{font-size:31px;font-weight:900;font-variant-numeric:tabular-nums;color:#1E2833}
+.k-vtl{display:flex;gap:12px;align-items:stretch}
+.k-vtl .k-vti{flex:1 1 0;min-width:0;border-top:8px solid #24476E;background:#F6F9FC;border-radius:0 0 12px 12px;padding:14px 14px}
+.k-vtl .k-vti.tr{border-top-color:#B5482F;background:#FDF6F3}.k-vtl .k-vti.sg{border-top-color:#3F7A55;background:#F5FAF6}.k-vtl .k-vti.bt{border-top-color:#C99A1E;background:#FEFAEC}
+.k-vti b{display:block;font-family:"Noto Serif TC",serif;font-size:32px;color:#24476E;margin-bottom:6px}
+.k-vti p{margin:0;font-size:25px;line-height:1.42;color:#1E2833}
+.k-vflow{display:flex;align-items:stretch;gap:0}
+.k-vflow .k-vcard{flex:1 1 0}
+.k-vflow .k-varr{flex:0 0 46px;display:flex;align-items:center;justify-content:center;font-size:40px;color:#5F6B77;font-weight:900}
+.k-vfig{margin:0;display:flex;flex-direction:column;gap:6px;min-height:0}
+.k-vfig img{width:100%;height:auto;max-height:520px;object-fit:contain;border-radius:12px;background:#FFFFFF}
+.k-vfig figcaption{font-size:21px;color:#5F6B77}
+.k-vmx{display:grid;gap:6px}
+.k-vmx div{padding:18px 10px;border-radius:8px;font-size:27px;font-weight:800;text-align:center;line-height:1.3}
+.k-vmx .h{background:#24476E;color:#FFFFFF}
+.k-vmx .r{background:#F0F2F4;color:#1E2833;text-align:left}
+.k-vmx .go{background:#E9F3EC;color:#2E5E40}
+.k-vmx .cj{background:#FDF6DD;color:#7A5A00}
+.k-vmx .st{background:#FBEDE8;color:#9C3A24}
+.k-slide .k-cite{font-size:18px;line-height:1.42;margin-top:14px}
+.k-vend{display:flex;flex-direction:column;gap:14px}
+/* ---- 手機／平板重排（deck.js 加 body.k-reflow） ---- */
+body.k-reflow .k-vgrid.c2,body.k-reflow .k-vgrid.c3,body.k-reflow .k-vgrid.c4,body.k-reflow .k-vgrid.c64,body.k-reflow .k-vgrid.c46{grid-template-columns:1fr}
+body.k-reflow .k-vtl{flex-direction:column}
+body.k-reflow .k-vtl .k-vti{border-top:none;border-left:8px solid #24476E;border-radius:0 12px 12px 0}
+body.k-reflow .k-vflow{flex-direction:column}
+body.k-reflow .k-vflow .k-varr{flex-basis:40px;transform:rotate(90deg)}
+body.k-reflow .k-vbar{grid-template-columns:1fr 90px}
+body.k-reflow .k-vbar .l{grid-column:1 / -1}
+body.k-reflow .k-vtable{font-size:20px}
+body.k-reflow .k-vmx{grid-template-columns:96px repeat(3,1fr) !important;display:grid !important}
+body.k-reflow .k-vstat{font-size:48px}
+
+.k-vsmall{font-size:24px;color:#3B4754;margin:0}
+.k-cover .k-cover-copy{width:820px !important}
+.k-cover .k-cover-copy h1{font-size:62px !important}
+.k-vend h3{font-size:31px !important}
+
+/* ---- 第二輪：放大字級、填滿版面（2026-11-09） ---- */
+.k-vgrid.fill,.k-vtl.fill,.k-vflow.fill{flex:1 1 0;min-height:0}
+.k-vgrid.fill > .k-vcard,.k-vflow.fill > .k-vcard{justify-content:center}
+.k-vcard h3{font-size:38px}
+.k-vcard p,.k-vcard li{font-size:32px;line-height:1.42}
+.k-vgrid.c4 .k-vcard h3{font-size:32px}
+.k-vgrid.c4 .k-vcard p,.k-vgrid.c4 .k-vcard li,.k-vflow .k-vcard p{font-size:28px}
+.k-vflow .k-vcard h3{font-size:33px}
+.k-vtl.fill .k-vti{display:flex;flex-direction:column;justify-content:center}
+.k-vti b{font-size:36px}
+.k-vti p{font-size:28px;line-height:1.4}
+.k-vtable{font-size:30px}
+.k-vtable th{font-size:27px;padding:14px 16px}
+.k-vtable td{padding:16px 16px}
+.k-vsmall{font-size:26px}
+.k-vbar .l{font-size:30px}.k-vbar .v{font-size:34px}.k-vbar .t{height:54px}
+.k-vbar{grid-template-columns:400px 1fr 140px}
+.k-vmx div{font-size:30px;padding:22px 10px}
+.k-vend h3{font-size:34px !important}
+.k-vtake{font-size:31px}
+body.k-reflow .k-vgrid.fill,body.k-reflow .k-vtl.fill,body.k-reflow .k-vflow.fill{flex:0 0 auto}
+/* ---- 第三輪：大字（投影距離） ---- */
+.k-vcard h3{font-size:41px}
+.k-vcard p,.k-vcard li{font-size:35px;line-height:1.4}
+.k-vgrid.c4 .k-vcard h3{font-size:34px}
+.k-vgrid.c4 .k-vcard p,.k-vgrid.c4 .k-vcard li{font-size:30px}
+.k-vflow .k-vcard h3{font-size:35px}.k-vflow .k-vcard p{font-size:30px}
+.k-vti b{font-size:40px}.k-vti p{font-size:31px}
+.k-vtable{font-size:32px}.k-vtable th{font-size:28px}
+.k-vstat{font-size:92px}.k-vlab{font-size:29px}
+section[data-title="真實世界總覽"] .k-vtable{font-size:27px}
+section[data-title="真實世界總覽"] .k-vtable td{padding:10px 14px}
+
+
+body.k-reflow .k-vmx > div{font-size:15px;padding:10px 4px}
+
+body.k-reflow .k-slide .k-body .k-vmx[style]{display:grid !important;grid-template-columns:96px repeat(3,1fr) !important}
+
+
+section[data-title="里程碑"] .k-vtl{gap:8px}
+section[data-title="里程碑"] .k-vti{padding:12px 10px}
+section[data-title="里程碑"] .k-vti b{font-size:28px;white-space:nowrap}
+section[data-title="里程碑"] .k-vti p{font-size:25px}

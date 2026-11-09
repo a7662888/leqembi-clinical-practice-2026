@@ -378,6 +378,7 @@
   on(bVoice, () => {   // 依序切換：可用的聲音 → 關
     const order = Object.keys(A.voices).filter(hasVoice).concat('off');
     voice = order[(order.indexOf(voice) + 1) % order.length];
+    syncLangToVoice();
     setToggles(); save(); if (playing) playBeat(beatIdx);
   });
   on($('#kb-menu'), () => openMenu());
@@ -463,7 +464,7 @@
       const opts = Object.keys(A.voices || {}).map(k => [k, A.voices[k].label || k]).concat([['off', '不配音（只看字幕）']]);
       vbox.innerHTML = '<b>配音</b>' + opts.map(([k, lab]) =>
         `<label class="${k !== 'off' && !hasVoice(k) ? 'dis' : ''}"><input type="radio" name="kv" value="${k}" ${k === voice ? 'checked' : ''}>${lab}</label>`).join('');
-      vbox.addEventListener('change', e => { voice = e.target.value; save(); setToggles(); });
+      vbox.addEventListener('change', e => { voice = e.target.value; syncLangToVoice(); save(); setToggles(); });
     }
     const sbox = menu.querySelector('[data-opt="sub"] input'), mbox = menu.querySelector('[data-opt="bgm"] input');
     if (sbox) { sbox.checked = subOn; sbox.addEventListener('change', () => { subOn = sbox.checked; save(); setToggles(); }); }
@@ -493,13 +494,24 @@
   on($('#kend-again'), () => { $('#k-end').classList.remove('on'); go(0, 0); enter('auto'); }); on($('#kend-replay'), () => { $('#k-end').classList.remove('on'); go(0, 0); enter('auto'); }); on($('#kend-present'), () => { $('#k-end').classList.remove('on'); go(0, 0); enter('present'); });
   on($('#kend-menu'), () => { $('#k-end').classList.remove('on'); go(0, 0); openMenu(); });
 
+  /* ---------- 語言⇄配音雙向同步（v2：voices 帶 lang 欄位） ---------- */
+  function voiceLang(v) { return (A.voices && A.voices[v] && A.voices[v].lang) || 'zh'; }
+  function syncLangToVoice() { if (voice && voice !== 'off' && voiceLang(voice) !== currentLang) applyLang(voiceLang(voice)); }
+  function syncVoiceToLang() {
+    if (!voice || voice === 'off' || voiceLang(voice) === currentLang) return;
+    const alt = Object.keys(A.voices || {}).find(k => voiceLang(k) === currentLang && hasVoice(k));
+    if (alt) voice = alt;
+  }
   /* ---------- 啟動 ---------- */
   const h = location.hash.match(/^#(\d+)$/);
   go(h ? +h[1] - 1 : 0, 0);
   buildMenu(); setToggles(); setPlayBtn(); updClock();
   applyLang(currentLang);
+  if (Q.get('voice')) syncLangToVoice(); else syncVoiceToLang();
+  setToggles();
   on($('#k-lang-toggle'), () => {
     applyLang(currentLang === 'zh' ? 'en' : 'zh');
+    syncVoiceToLang(); setToggles(); save(); if (playing) playBeat(beatIdx);
   });
   if (showAll) { menu && menu.classList.add('off'); mode = 'present'; document.body.classList.add('present', 'all'); step = 99; render(); }
   else if (Q.get('mode') === 'present' || Q.get('mode') === 'auto') enter(Q.get('mode'));
