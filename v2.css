@@ -123,3 +123,18 @@ section[data-title="里程碑"] .k-vtl{gap:8px}
 section[data-title="里程碑"] .k-vti{padding:12px 10px}
 section[data-title="里程碑"] .k-vti b{font-size:28px;white-space:nowrap}
 section[data-title="里程碑"] .k-vti p{font-size:25px}
+
+/* ---- 真實截圖 ---- */
+.k-vshot{margin:0;display:flex;flex-direction:column;gap:6px;min-width:0}
+.k-vshot img{width:100%;object-fit:cover;object-position:top left;border:2px solid #C9D1D9;border-radius:10px;background:#FFFFFF;cursor:zoom-in;box-shadow:0 3px 10px rgba(30,40,51,.08)}
+.k-vshot figcaption{font-size:19px;line-height:1.35;color:#5F6B77}
+.k-vshots{display:flex;flex-direction:column;gap:14px;min-width:0}
+body.k-reflow .k-vshot img{height:auto !important;max-height:340px}
+
+
+section[data-title="共享決策"] .k-vtable{font-size:27px}
+section[data-title="共享決策"] .k-vtable td{padding:10px 14px}
+section[data-title="共享決策"] .k-vcard{padding:14px 22px}
+section[data-title="共享決策"] .k-vcard h3{font-size:32px}
+section[data-title="共享決策"] .k-vcard li{font-size:29px;line-height:1.36}
+
